@@ -30,3 +30,6 @@
 
 Создана базовая структура проекта.
 
+## Ссылка на опубликованный проект
+
+GitHub Pages: https://tzutira.github.io/kr1-html-css-shop/
