@@ -10,6 +10,17 @@ const closeDialogButton = document.getElementById('close-order-dialog');
 // Получаем скрытое поле, в которое будет записан выбранный товар.
 const selectedProductInput = document.getElementById('selected-product');
 
+// Получаем кнопку обратной связи и список тем заявки.
+const openDialogButton = document.getElementById('open-order-dialog');
+const orderTopicSelect = document.getElementById('order-topic');
+
+// Открываем форму для консультации из блока обратной связи.
+openDialogButton.addEventListener('click', () => {
+  selectedProductInput.value = '';
+  orderTopicSelect.value = 'consultation';
+  orderDialog.showModal();
+});
+
 // Перебираем все кнопки «Заказать».
 orderButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -18,6 +29,7 @@ orderButtons.forEach((button) => {
 
     // Записываем название товара в скрытое поле формы.
     selectedProductInput.value = productName;
+    orderTopicSelect.value = 'product';
 
     // Открываем модальное окно.
     orderDialog.showModal();
