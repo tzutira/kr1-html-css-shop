@@ -16,6 +16,7 @@ const orderTopicSelect = document.getElementById('order-topic');
 
 // Открываем форму для консультации из блока обратной связи.
 openDialogButton.addEventListener('click', () => {
+  successMessage.hidden = true;
   selectedProductInput.value = '';
   orderTopicSelect.value = 'consultation';
   orderDialog.showModal();
@@ -25,6 +26,7 @@ openDialogButton.addEventListener('click', () => {
 orderButtons.forEach((button) => {
   button.addEventListener('click', () => {
     // Получаем название товара из data-атрибута.
+    successMessage.hidden = true;
     const productName = button.dataset.product;
 
     // Записываем название товара в скрытое поле формы.
@@ -47,11 +49,20 @@ const orderForm = document.getElementById('order-form');
 // Получаем сообщение об успешной отправке.
 const successMessage = document.getElementById('success-message');
 
+// Модификатор ошибки соответствует БЭМ-элементу конкретного поля.
+function getFieldErrorClass(element) {
+  if (element.type === 'checkbox') return 'order-form__checkbox--error';
+  if (element.tagName === 'SELECT') return 'order-form__select--error';
+  if (element.tagName === 'TEXTAREA') return 'order-form__textarea--error';
+  return 'order-form__input--error';
+}
+
 // Обрабатываем отправку формы.
 orderForm.addEventListener('submit', (event) => {
   // Отменяем стандартную отправку формы,
   // потому что backend пока не подключён.
   event.preventDefault();
+  successMessage.hidden = true;
 
   // Сбрасываем предыдущие признаки ошибок.
   const formElements = Array.from(orderForm.elements);
@@ -59,6 +70,7 @@ orderForm.addEventListener('submit', (event) => {
   formElements.forEach((element) => {
     if (element.willValidate) {
       element.removeAttribute('aria-invalid');
+      element.classList.remove(getFieldErrorClass(element));
     }
   });
 
@@ -67,6 +79,7 @@ orderForm.addEventListener('submit', (event) => {
     formElements.forEach((element) => {
       if (element.willValidate && !element.checkValidity()) {
         element.setAttribute('aria-invalid', 'true');
+        element.classList.add(getFieldErrorClass(element));
       }
     });
 
