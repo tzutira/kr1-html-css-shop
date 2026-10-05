@@ -13,55 +13,55 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main class="site-main">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span aria-current="page">Контакты</span>
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Контакты</span>
     </nav>
 
     <section class="section">
-      <h1>Контакты</h1>
-      <p>Контактные данные для демонстрации учебного проекта.</p>
+      <h1 class="section__title">Контакты</h1>
+      <p class="section__description">Контактные данные для демонстрации учебного проекта.</p>
 
       <ul>
-        <li>Телефон: +7 (900) 000-00-00</li>
-        <li>E-mail: info@example.com</li>
-        <li>Адрес: г. Москва, учебный проект</li>
+        <li>Телефон: +7 (923) 573-45-77</li>
+        <li>E-mail: benyakh.d.n@edu.mirea.ru</li>
+        <li>Адрес: г. Москва, Проспект Вернадского, 78с2</li>
       </ul>
     </section>
 
     <section class="section" id="feedback">
-      <h2>Обратная связь</h2>
-      <p>
+      <h2 class="section__title">Обратная связь</h2>
+      <p class="section__description">
         Перейдите к блоку обратной связи на главной странице,
         затем нажмите кнопку открытия формы заявки.
       </p>
-      <a class="button" href="index.html#contacts">
+      <a class="button button--primary" href="index.html#contacts">
         Перейти к обратной связи
       </a>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer">
+    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 </body>
 </html>
