@@ -65,6 +65,9 @@ body {
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===============================
@@ -197,7 +200,7 @@ a:focus-visible {
 Hero-блок — первый крупный блок страницы.
 */
 .hero {
-  max-width: var(--container-width);
+  max-width: 100%;
   margin: 0 auto var(--space-xl);
   padding: var(--space-xl) var(--space-lg);
   background-color: var(--color-surface-accent);
@@ -530,7 +533,7 @@ html {
 .site-nav__link { font-size: 14px; }
 .site-main { padding-top: var(--space-xl); }
 .hero { padding: 64px 40px; }
-.hero__title { font-size: clamp(32px, 5vw, 60px); line-height: 1.1; max-width: 700px; margin: 0 0 24px; }
+.hero__title {font-size: clamp(32px, 5vw, 60px); line-height: 1.1; max-width: 700px; margin: 0; }
 .hero__description { max-width: 580px; margin-bottom: 28px; }
 .product-card { position: relative; padding-top: 44px; }
 .product-card__badge { position: absolute; top: 12px; right: 12px; background: var(--color-text); color: white; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; }
@@ -592,3 +595,31 @@ html {
 .advantages__item { margin-bottom: 8px; }
 .advantages-title { margin-bottom: 12px; }
 .product-detail__price--discount { color: var(--color-danger); }
+
+.site-main {
+  flex-grow: 1;
+}
+
+.hero {
+  height: 600px;
+  background-image: url("../images/hero-photo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+  text-align: left;
+}
+
+.contacts-photo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-top: var(--space-lg);
+  border-radius: var(--radius-lg);
+}
